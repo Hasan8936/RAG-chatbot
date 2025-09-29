@@ -213,9 +213,7 @@ const RAGChatInterface = () => {
             div className = "flex items-start gap-2" > { getIcon() } <
             div className = "flex-1" >
             <
-            div className = "whitespace-pre-wrap" > { message.content } < /div>
-
-            {
+            div className = "whitespace-pre-wrap" > { message.content } < /div> {
                 message.sources && message.sources.length > 0 && ( <
                     div className = "mt-3 pt-3 border-t border-gray-200" >
                     <
@@ -234,9 +232,7 @@ const RAGChatInterface = () => {
                             /div>
                         ))
                     } <
-                    /div>
-
-                    {
+                    /div> {
                         message.confidence && ( <
                             div className = "mt-2 text-xs text-gray-500" >
                             Overall confidence: {
@@ -249,11 +245,8 @@ const RAGChatInterface = () => {
                 )
             } <
             /div> <
-            /div>
-
-            <
-            div className = "text-xs opacity-70 mt-2" > { message.timestamp.toLocaleTimeString() } <
             /div> <
+            div className = "text-xs opacity-70 mt-2" > { message.timestamp.toLocaleTimeString() } < /div> <
             /div>
         );
     };
@@ -375,15 +368,15 @@ const RAGChatInterface = () => {
                         <
                         Loader2 className = "w-4 h-4 animate-spin" / >
                         <
-                        span > Thinking... < /span> <
-                        /div>
+                        span > Thinking... < /span> < /
+                        div >
                     )
                 }
 
                 <
                 div ref = { messagesEndRef }
-                /> <
-                /div>
+                /> < /
+                div >
             )
         } <
         /div>

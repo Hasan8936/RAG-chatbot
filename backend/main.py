@@ -39,9 +39,11 @@ app = FastAPI(
 
 # Configure CORS (Cross-Origin Resource Sharing)
 # This allows our React frontend to talk to our Python backend
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:3001").split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"],  # React dev server
+    allow_origins=ALLOWED_ORIGINS,  # Use environment variable for origins
     allow_credentials=True,
     allow_methods=["*"],      # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],      # Allow all headers
