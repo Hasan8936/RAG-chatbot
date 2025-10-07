@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import streamlit as st
 
 # Lightweight Streamlit entrypoint that ensures imports work on Streamlit Cloud
