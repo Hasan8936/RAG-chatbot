@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 import streamlit as st
 
-# Import the DocumentProcessor from the backend package
-from backend.document_processor import DocumentProcessor
+# Lightweight Streamlit entrypoint that ensures imports work on Streamlit Cloud
+st.set_page_config(page_title="RAG Chatbot", page_icon="📚")
+
+try:
+    # Import the DocumentProcessor from the backend package
+    from backend.document_processor import DocumentProcessor
+except Exception:
+    st.title("RAG Chatbot — startup error")
+    st.error("Failed to import `backend.document_processor`. Check your dependencies and Python path. See full logs for details.")
+    # Re-raise so the platform logs contain the traceback for debugging
+    raise
 
 
 def main():
